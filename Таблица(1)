@@ -1,7 +1,7 @@
-R=readtable("fileExcel.x1sx");
+R=readtable("fileExcel.xlsx");
 D=string(R.x__(R.x___=="Руководитель"));
 S=string(R.x__(R.x___=="Исполнитель"));
 roles=["Руководители"; "Исполнители"];
 peoples=[sprintf("%s;",D); sprintf("%s;",S)];
 t=Teble(roles,peoples);
-writetable(t, "outFile.x1sx")
+writetable(t, "outFile.xlsx")
