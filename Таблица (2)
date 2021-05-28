@@ -1,0 +1,17 @@
+table = readtable("Data_18032020.xlsx");
+val = zeros(31,1);
+koeff = table.x_______________________./table.x__________________;
+val((koeff > 0.5) & (koeff <= 1)) = 1;
+val((koeff > 0.4) & (koeff <= 0.5)) = 0.8;
+val((koeff > 0.3) & (koeff <= 0.4)) = 0.6;
+val((koeff > 0.2) & (koeff <= 0.3)) = 0.4;
+val((koeff > 0.1) & (koeff <= 0.2)) = 0.2;
+val((koeff > 0) & (koeff <= 0.1)) = 0.1;
+age = fix(years((today('datetime') - table.x____________)));
+table.age = age;
+id11_1 = table.x__________(strlength(table.id1) == 11);
+id11_2 = table.x__________(strlength(table.id2) == 11);
+
+table.ratio = val;
+
+writetable(table,"newFile.xlsx");
