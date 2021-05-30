@@ -1,0 +1,76 @@
+a = -3;
+b = 3;
+x = linspace(a,b,100);
+f = 'x.^2-2*x-1-sin(x)';
+plot(x,eval(f),x,0*x,':');
+grid on;
+z = ginput(1);
+[zr,fr] = fzero(f,z(1));
+disp(zr);
+hold on
+plot(zr,fr,'r*',z(1),z(2),'g*');
+hold off
+%%
+a = 0;
+b = 4*pi;
+x = linspace(a,b,100);
+f = 'x.*sin(x)-cos(x)';
+plot(x,eval(f),x,0*x,':');
+grid on;
+z = ginput(1);
+[zr,fr] = fzero(f,z(1));
+disp(zr);
+hold on
+plot(zr,fr,'r*',z(1),z(2),'g*');
+hold off
+%%
+a=pi/2;
+b=3*pi;
+x=linspace(a,b,100);
+f='sin(x).*sin(x)+(0.5-1./x).*cos(x)-0.5';
+plot(x,eval(f),x,0*x,':');
+grid on;
+z=ginput(1);
+[zr,fr]=fzero(f,z(1));
+disp(zr);
+hold on
+plot(zr,fr,'r*',z(1),z(2),'g*');
+hold off
+%%
+a=-2*pi;
+b=6*pi;
+x=linspace(a,b,100);
+f='5*exp(-0.1.*x).*sin(x)-0.1.*x';
+plot(x,eval(f),x,0*x,':');
+grid on;
+z=ginput(1);
+[zr,fr]=fzero(f,z(1));
+disp(zr);
+hold on 
+plot(zr,fr,'r*',z(1),z(2),'g*');
+hold off
+%%
+syms x;
+eq=x^2+1;
+x1=fzero('x^2+1',0);
+x2=solve(eq);
+disp(x1); 
+disp(x2);
+%%
+a=-2;
+b=2;
+x=linspace(a,b,100);
+f='cos(x)-exp(0.001+x.^2)';
+plot(x,eval(f),x,0*x,':');
+grid on;
+z=ginput(1);
+[zr,fr]=fzero(f,z(1));
+x1=fzero(f,z(1))
+hold on
+plot(zr,fr,'r*',z(1),z(2),'g*');
+hold off
+disp(x1);
+syms x;
+eq = cos(x)-exp(0.001+x.^2);
+x2 = solve(eq);
+disp(x2);
