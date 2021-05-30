@@ -1,0 +1,39 @@
+syms x y;
+f = x^5+4*x^4-2*x^3-14*x^2-3*x-18;
+f = factor(f);
+disp(f);
+%%
+syms x y;
+f = tan(x).^tan(2*x);
+disp(limit(f,x,pi/4));
+%%
+p1 = [7 1 0 -1];
+f1=poly2sym(p1);
+p2 = [5 2 1];
+f2=poly2sym(p2);
+f=f1/f2;
+disp(limit(f,inf));
+%%
+syms x y;
+f = atan(1/(1-x));
+disp(limit(f,x,1,'right'));
+%%
+syms x y;
+f = diff(3*x^4 - 14*x^3+12*x^2+24*x+6);
+disp(simplify(f));
+%%
+syms x y;
+f = diff((sin(3*x)-cos(3*x)).^2);
+disp(simplify(f));
+%%
+syms x y;
+disp(int((sqrt(1-x^2))./x^2));
+disp(int(f));
+%%
+syms x y;
+disp(int(1/sin(x)^3));
+disp(int(f));
+%%
+syms x y;
+disp(int(((sin(2*x)+1)^(1/7))*cos(2*x)));
+disp(int(f));
