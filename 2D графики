@@ -88,6 +88,15 @@ y = 3*r*sin(theta) - r*sin(a+3*theta);
 plot(x,y)
 title("нефроида")
 grid on
+%%
+t=-5:0.1:5;
+a=1/4;b=1/16;m=8;n=8;
+x=cos(t)-a.*cos(m.*t)+b.*sin(n.*t);
+y=sin(t)+a.*sin(m.*t)+b.*cos(n.*t);
+k=1:2:202;
+x=x./k;
+y=y./k;
+plot(x,y,"Color",[0.2 0 0.7]);
 
 
 
